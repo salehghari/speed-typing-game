@@ -3,25 +3,87 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --main-color: #627E8B;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.card {
+  background-color: #EAEDF0;
+}
+
+.quote-display {
+  font-size: 16px;
+}
+
+.correct {
+  color: #17B169;
+}
+.incorrect {
+  color: #ff6868;
+  text-decoration: underline;
+}
+
+.timer-bar-container {
+  width: 100%;
+  height: 2px;
+}
+
+.timer-bar {
+  height: 2px;
+  transition: width 0.6s;
+  background-color: var(--main-color);
+}
+
+.timer-text {
+  font-size: 18px;
+}
+.numbers {
+  color: var(--main-color);
+}
+
+textarea {
+  min-height: 100px;
+}
+textarea:disabled {
+  background-color: #f7f7f7;
+}
+.start-btn {
+  background-color: var(--main-color);
+}
+
+
+
+/* Styles for the modal */
+.modal {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+  background-color: var(--main-color);
+}
+
+.close-btn:hover {
+  background-color: #546b77;
+}
+.time-is-up-text span {
+  color: var(--main-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-4px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.error-text .time-is-up-text {
+  animation: bounce 1s;
 }
