@@ -182,7 +182,7 @@ export default function Quote() {
           {quoteData.content.split('').map((character: string, index) => (
             <span key={index} ref={(el) => (spanRefs.current[index] = el)} className="md:text-xl">{character}</span>
           ))}
-          <p className="text-sm text-slate-500">"{quoteData.author}"</p>
+          <p className="text-sm text-slate-500">&rdquo;{quoteData.author}&rdquo;</p>
         </div>
         <div className="flex justify-center">
           <textarea
@@ -201,7 +201,7 @@ export default function Quote() {
         <div className="flex justify-center">
           {timer === 0 && !error &&
             <div className="time-is-up-text bg-slate-200 p-1 rounded-sm w-full lg:w-72 sm:text-base text-xs text-center mt-2 ">
-              Oops! Time's up.. 💔 <span onClick={tryAgain}>Try Again</span>
+              Oops! Time&apos;s up.. 💔 <span onClick={tryAgain}>Try Again</span>
             </div>
           }
           {error &&
