@@ -190,6 +190,7 @@ export default function Quote() {
             value={textareaValue}
             onChange={handleTextareaChange}
             autoFocus
+            onDrop={(e) => e.preventDefault()}
             placeholder="Start typing..."
             disabled={timer === 0 || isGameOver}
             onCopy={(e) => e.preventDefault()}
